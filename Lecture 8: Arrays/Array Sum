@@ -1,0 +1,73 @@
+Array Sum
+Send Feedback
+Given an array of length N, you need to find and print the sum of all elements of the array.
+Input Format :
+Line 1 : An Integer N i.e. size of array
+Line 2 : N integers which are elements of the array, separated by spaces
+Output Format :
+Sum
+Constraints :
+1 <= N <= 10^6
+Sample Input :
+3
+9 8 9
+Sample Output :
+26
+
+/*************************************************** SOLUTION *************************************************************************/
+
+
+/***************************************************MAIN CODE *************************************************************************/
+
+#include<iostream>
+using namespace std;
+int main(){
+    
+     int size;
+    cin >> size;
+    int arr[1000000];
+    for (int i = 0 ; i < size ; i++)
+        {
+        cin>> arr[i];
+    }
+    int result = 0;
+    for(int i = 0; i < size; i++){
+        result +=arr[i];
+    }
+    cout << result << endl;
+}
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+
+Print array Sum
+Problem Description: You are given an array of length N, then you have to print the sum of all
+elements of this array.
+For example N=3
+ arr[]= 9 8 9
+ Output = 26 (9 + 8 + 9=26)
+How to approach?
+In this problem first take the size of array and array as input from user, then you need to maintain
+a variable result, and traverse the whole array and continue to add each element till the end of
+array and then print result.
+Pseudo Code for this problem:
+Input= Size
+For int i=0 to i less than size:
+ Input=arr[i]
+result=0
+For int i=0 to i less than i:
+ result=result+arr[i]
+print(result)
+❏ Let us dry run the code for N= 3
+➔ Take the array as input =9 8 9
+➔ result=0
+➔ i=0
+result=0+9=9
+➔ i=1
+result=9+8=17
+➔ i=2
+result=17+9=26
+ Final Output:
+ 26
