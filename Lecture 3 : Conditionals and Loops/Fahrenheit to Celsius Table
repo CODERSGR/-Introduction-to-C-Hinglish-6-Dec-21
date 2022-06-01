@@ -80,6 +80,58 @@ cout<<f<<" "<<int( c )+1<<endl;
 	* Print output as specified in the question.
 	*/
   
+  
+  /***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+Fahrenheit to Celsius
+Problem Description: In this problem you are given with a Start Fahrenheit Value (S), End
+Fahrenheit value (E) and Step Size (W), you need to convert all Fahrenheit values from Start to
+End at the gap of W, into their corresponding Celsius values and print the table.
+How to approach?
+1. Take the start value, end value and the step as input from the user.
+2. Take a current value equal to start value.
+3. Then, run a loop until current value becomes equal to end value with a step increment of
+W
+4. In each iteration convert into corresponding celsius value. And print both fahrenheit and
+celsius value.
+Pseudo Code for the problem:
+Start, End, Step=input
+Current value=Start
+While Current value is less than equal to end:
+ Fahrenheit=(5.0 / 9) * (Current Value - 32)
+ Print ( Fahrenheit Current Value)
+ Current Value=Current Value+W
+❏ Let us Dry run the code for:
+ Start = 0
+ End = 100
+ Step = 20
+● Current Value=0 (<=100) then, by applying the formula Fahrenheit=(5.0 / 9) *
+(Current Value - 32), Fahrenheit= -17
+So print, 0 -17
+● Current Value=0+20=20 (<=100) then, by applying the formula Fahrenheit=(5.0
+/ 9) * (Current Value - 32), Fahrenheit= -6
+So print, 20 -6
+● Current Value=20+20=40 (<=100) then, by applying the formula Fahrenheit=(5.0
+/ 9) * (Current Value - 32), Fahrenheit= 4
+So print, 40 4
+● Current Value=40+20=60 (<=100) then, by applying the formula Fahrenheit=(5.0
+/ 9) * (Current Value - 32), Fahrenheit= 15
+So print, 60 15
+● Current Value=60+20=80 (<=100) then, by applying the formula Fahrenheit=(5.0
+/ 9) * (Current Value - 32), Fahrenheit= 26
+So print, 80 26
+● Current Value=80+20=100 (<=100) then, by applying the formula
+Fahrenheit=(5.0 / 9) * (Current Value - 32), Fahrenheit= 37
+So print, 100 37
+● Current Value=100+20=120 (>100) then, move out of the loop and end.
+● So the final printed output will be:
+0 -17
+20 -6
+40 4
+60 15
+80 26
+100 37
 
 
 
