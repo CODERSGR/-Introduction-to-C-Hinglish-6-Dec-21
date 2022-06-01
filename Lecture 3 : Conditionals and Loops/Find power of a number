@@ -50,3 +50,33 @@ int main() {
 	// Write your code here
 	
 }
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+Find power of a number
+Problem Description: You are given a number x and another number n. You have to print x (x n
+raised to the power n).
+For example, if x=3 and n=2 then, you have to print 9 ( 3 ). 2
+How to approach?
+1. Take x and n as input from the user.
+2. x^n basically means, multiplying x, n times. So, initialize an ans with 1.
+3. Now, run a loop until n becomes 0, and multiply x with ans each time.
+4. Print the final ans obtained.
+Pseudo code for this problem:
+Input = x
+Input= n
+ans=1
+While n is greater than 0:
+ ans=ans*x
+ Decrement n by 1
+Print(ans)
+❏ Let us dry run the code:
+ x=4 and n=2
+● ans =1
+● n=2(>0), so ans=1*4=4
+● n=1(>0), so ans=4*4=16
+● n=0(==0), so move out of the loop and we will print the ans
+● Output:
+16
