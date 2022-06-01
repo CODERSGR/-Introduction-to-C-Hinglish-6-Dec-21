@@ -56,3 +56,70 @@ int main() {
          d++;
     }
 }
+
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+All Prime Numbers
+Problem Description: You are given an input integer N, and you have to print all the prime
+numbers between 2 to N (both inclusive) in different lines.
+For example, if the given number is 7, then the prime numbers between 2 to 7 will be 2,3,5 and 7
+which must be printed in different lines in the output.
+How to approach?
+1. Take the number as input from the user.
+2. Now, initialize a loop from i=2 to n, and for each i check whether it is prime or not,
+initially take isPrime (to denote whether a number is prime or not) as true which means
+we are assuming that the number is prime, initially.
+3. Now, for each i we create another loop in this to check if that number is prime or not. If it
+is not prime then make isPrime as false and continue to next i otherwise if isPrime
+remains true, then print it.
+Pseudo Code for this problem:
+Input = N
+For i=2 to i less than equal to N:
+ isPrime=true
+ For j=2 to i less than i:
+ If i%j=0:
+ isPrime=false
+ Break (to move out of inner loop)
+ If (isPrime= true):
+ Print (i) in new line
+❏ Let us dry run the code:
+N=7
+● i=2
+isPrime=true
+➔ j=2, move out of the inner loop
+ Print 2.
+● i=3
+isPrime=true
+➔ j=2, 3%2!=0
+➔ j=3, move out of the loop
+ Print 3.
+● i=4
+isPrime=true
+➔ j=2, 4%2=0, so isPrime=false and move out of the inner loop
+ So, don’t print anything here.
+● i=5
+isPrime=true
+➔ j=2, 5%2!=0
+➔ j=3, 5%3!=0
+➔ j=4, 5%4!=0
+ Print 5.
+● i=6
+isPrime=true
+➔ j=2, 6%2=0, isPrime=false, move out of the loop
+ So, move out the inner loop.
+● i=7
+isPrime=true.
+➔ j=2, 7%2!=0.
+➔ j=3, 7%3!=0
+➔ j=4, 7%4!=0
+➔ j=5, 7%5!=0
+➔ j=6, 7%6!=0
+ Print 7.
+Final output:
+2
+3
+5
+7
