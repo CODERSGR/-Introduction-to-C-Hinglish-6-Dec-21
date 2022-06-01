@@ -53,3 +53,60 @@ int main() {
 	// Write your code here
 	
 }
+
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+Sum of even & odd
+Problem Description: You are given an input integer N, and you have to calculate the sum of its
+odd and even digits separately.
+For example, if the given number is 24321, then sum of it’s even digit=2+4+2=8 and odd
+digits=3+1=4.
+How to approach?
+1. Take the number as input from the user.
+2. Initialize both even sum and odd sum from 0.
+3. Now, start picking up the last digit by taking modulo 10 while number is greater than 0
+and check whether the last digit is odd or even.
+4. If the last digit is odd then, add it to then odd sum otherwise add it to the even sum and
+pass the number by dividing it to 10 to the next iteration.
+5. Print even sum and odd sum.
+Pseudo Code for this problem:
+Input = number
+Even sum=0
+odd sum=0
+While number is greater than 0:
+ Last digit=number%10
+ If last digit is even:
+ even sum=even sum+last digit
+ Else:
+ odd sum=odd sum+last digit
+ number=number/10
+Print(even sum odd sum)
+❏ Let us dry run the code:
+number=345276
+● Even sum=0
+Odd sum=0
+● Last digit=6
+6 is even, so even sum=0+6=6
+number=34527
+● Last digit=7
+7 is odd, so odd sum=0+7=7
+number=3452
+● Last digit=2
+2 is even, so even sum=6+2=8
+number=345
+● Last digit=5
+5 is odd, so odd sum=7+5=12
+number=34
+● Last digit=4
+4 is even, so even sum=8+4=12
+number=3
+● Last digit=3
+3 is odd, so odd sum=12+3=15
+number=0
+● Now number is not greater than 0 here so we stop and print both even and odd
+sum.
+Output:
+12 15
