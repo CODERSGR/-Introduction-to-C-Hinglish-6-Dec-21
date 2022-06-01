@@ -1,0 +1,147 @@
+Pyramid Number Pattern
+Send Feedback
+Print the following pattern for the given number of rows.
+Pattern for N = 4
+   1
+  212
+ 32123
+4321234
+Input format : N (Total no. of rows)
+
+Output format : Pattern in N lines
+
+Sample Input :
+5
+Sample Output :
+        1
+      212
+    32123
+  4321234
+543212345
+
+
+
+
+
+/*************************************************** SOLUTION *************************************************************************/
+
+
+
+/*************************************************** SOLUTION *************************************************************************/
+
+
+
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int i=1;
+    while(i<=n)
+    {
+        int k=n-i;
+        while(k){
+            cout<<" ";
+            k=k-1;
+        }
+        int j=1;
+        while(j<=i){
+            cout<<i-j+1;
+            j=j+1;
+        }
+         j=2;
+        while(j<=i){
+            cout<<j;
+            j++;
+             }
+        cout<<endl;
+        i=i+1;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+/*************************************************** SOLUTION description *************************************************************************/
+
+Pyramid Number Pattern
+Problem Description: You are given with an input number N, then you have to print the given
+pattern corresponding to that number N.
+For example if N=4
+Pattern output : 1
+ 212
+ 32123
+ 4321234
+How to approach?
+1. Take N as input from the user.
+2. Figure out the number of rows, (which is N here) and run a loop for that.
+3. Now, figure out how many columns have to be printed in ith row. On careful observation,
+first we have to print spaces and then run a loop upto i columns to print the decreasing
+sequence for each row and then run a loop for the increasing sequence.
+4. Now, figure out “What to print?” in a particular (row, column). Here we have to print
+numbers in increasing order first and then numbers in decreasing order.
+Pseudo code for the given problem:
+input=N
+i=1
+For i =1 to i less than or equal to N:
+ space=N-i
+ While space is less than or equal to 0:
+ Print(“spaces”)
+ Decrement space by 1
+ value=i
+ While value is greater than 0:
+ Print(value)
+ Decrement value by 1
+ value=value+2
+ While value is less than or equal to i:
+ Print(value)
+ Increment value by 1
+❏ Let us dry run the Code for N=4
+● i=1(<=4)
+➔ Print 3(4-1) spaces first.
+➔ value=1 (>0), so print 1.
+➔ value=0, so move out of this inner loop.
+➔ value=2(>i), move out of this inner loop
+● i=2(<=4)
+➔ Print 2(4-2) spaces first.
+➔ value=2 (>0), so print 2.
+➔ value = 1(>0), so print 1.
+➔ value =0, so move out of this inner loop.
+➔ value=2 (<=i), so print 2.
+➔ value=3(>i), so move out of this inner loop.
+● i=3(<=4)
+➔ Print 1(4-3) space first.
+➔ value=3(>0), so print 3.
+➔ value=2(>0), so print 2.
+➔ value=1(>0), so print 1.
+➔ value =0, so move out of this inner loop.
+➔ value=2 (<=i), so print 2.
+➔ value=3 (<=i), so print 3.
+➔ value =4(>i), so move out of this inner loop.
+● i=4(<=4)
+➔ Print 0(4-4) space first.
+➔ value=4(>0), sp print 4.
+➔ value=3(>0), so print 3.
+➔ value=2(>0), so print 2.
+➔ value=1(>0), so print 1.
+➔ value =0, so move out of this inner loop.
+➔ value=2 (<=i), so print 2.
+➔ value=3 (<=i), so print 3.
+➔ value =4(<=i), so print 4.
+➔ value=5(>i), so move out of this inner loop.
+● i=5(>4), move out of the loop
+So, final output:
+ 1
+ 212
+ 32123
+ 432123
+
+
+
