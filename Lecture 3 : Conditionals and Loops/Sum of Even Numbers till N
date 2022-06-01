@@ -41,3 +41,31 @@ int main(){
     }
           cout  <<sum<<endl;
 }
+
+
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+Sum of Even Numbers till N
+Problem Description: In this question, you are given with a number N, you have to print the
+sum of all even number till N.
+How to approach?
+1. Take the number N as input from the user.
+2. Initialize i from 0 and initial sum with 0 and run a loop upto n to sum the values of i by
+giving an increment of 2 at each step, so that only the even numbers are added.
+Pseudo Code for the given problem:
+n=input
+i=0
+sum=0
+While i less than or equal to n:
+ sum=sum+i
+ i=i+2
+print(sum)
+❏ Let us dry run the given code for n=7
+● i=0, i<=7 so sum=0+0=0.
+● i=0+2=2(<=7), so sum=0+2=2
+● i=2+2=4(<=7), so sum=2+4=6
+● i=4+2=6(<=7) so sum=6+6=12.
+● i=6+2=8(>7) so print sum=12 as output
