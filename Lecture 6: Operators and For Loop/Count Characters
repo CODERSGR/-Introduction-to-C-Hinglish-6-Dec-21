@@ -51,3 +51,57 @@ int main(){
 
 
 
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+Count characters
+Problem Description: You have to count and print the total number of characters (lowercase
+english alphabet only), digits (0 to 9) and white spaces (single space, tab i.e. '\t' and new line i.e.
+'\n') entered till '$'. Print count of characters, count of digits and count of white spaces
+respectively (separated by space).
+How to approach?
+1. Take the stream of characters as input from the user using cin.get() as cin doesn’t counts
+white spaces and new line.
+2. Initialize all the 3 counts of characters, digits and spaces from 0.
+3. Run a while loop until we get ‘$’ as input.
+4. Check whether it is a character, digit or space and increment their respective count.
+Pseudo Code for this problem:
+Input = ch
+character=spaces=digits=0
+While ch!=’$’:
+ If ch lies between ‘a’ and ‘z’:
+ Increment the character count
+ If ch lies between ‘0’ and ‘9’:
+ Increment the digit count
+ If ch lies is a space or tab or new line:
+ Increment the space count
+ Input = ch
+❏ Let us dry run the code:
+ abc def4
+ 5$
+● Take input for 1st character ‘a’
+So, increment the character count=1
+● Go for the next input character ‘b’
+So, increment the character count=2
+● Then we take the next input ‘c’
+Increment the character count to 3.
+● Go for the next input which is ‘ ‘
+Increment the space count=1
+● Then we take the next input ‘d’
+Increment the character count to 4.
+● Then we take the next input ‘e’
+Increment the character count to 5.
+● Then we take the next input ‘f’
+Increment the character count to 6.
+● Then we take the next input ‘4’
+Increment the digit count to 1.
+● Then we take the next input ‘\n’
+Increment the space count to 2.
+● Then we take the next input ‘5’
+Increment the digit count to 2.
+● Then we take the next input ‘$’
+We will not enter into while loop and we will print character, digit and white
+space count.
+Output :
+6 2 2
+
