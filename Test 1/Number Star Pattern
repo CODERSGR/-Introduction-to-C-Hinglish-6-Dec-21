@@ -1,0 +1,212 @@
+Number Star Pattern
+Send Feedback
+Print the following pattern for given number of rows.
+Input format :
+
+Line 1 : N (Total number of rows)
+
+Sample Input :
+   5
+Sample Output :
+1234554321
+1234**4321
+123****321
+12******21
+1********1
+
+
+
+
+/*************************************************** SOLUTION *************************************************************************/
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    int n;
+  cin>>n;
+  int i=1;
+  int j,num,k,l;
+  while(i<=n){
+    j=n-i+1;
+    num=1;
+    while(j>0){
+      cout<<num<<"";
+      num++;
+      j--;
+    }
+    k=(i-1)*2;
+    while(k>0){
+      cout<<"*";
+      k--;
+    }
+    l=n-i+1;
+    while(l>0){
+      cout<<l<<"";
+      num--;
+      l--;
+    }
+    
+    cout<<endl;
+    i++;
+  }
+  
+}
+
+
+
+  // Write your code here
+
+
+
+
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    int n;
+  cin>>n;
+  int i=1;
+  int j,num,k,l;
+  while(i<=n){
+    j=n-i+1;
+    num=1;
+    while(j>0){
+      cout<<num<<"";
+      num++;
+      j--;
+    }
+    k=(i-1)*2;
+    while(k>0){
+      cout<<"*";
+      k--;
+    }
+    l=n-i+1;
+    while(l>0){
+      cout<<l<<"";
+      num--;
+      l--;
+    }
+    
+    cout<<endl;
+    i++;
+  }
+  
+}
+
+
+
+  // Write your code here
+  
+  
+  
+  
+  
+  
+
+/*************************************************** SOLUTION *************************************************************************/
+
+
+
+
+
+Number Star Pattern 2
+Problem Description: You are given with an input number N, then you have to print the given
+pattern corresponding to that number N.
+For example if N=4
+Pattern output : 12344321
+ 123**321
+ 12****21
+ 1******1
+How to approach?
+1. Take N as input from the user.
+2. Figure out the number of rows, (which is N here) and run a loop for that.
+3. Now, you need to run 3 loops here, in the first loop you need to print numbers, in the 2nd
+loop you need to print stars, again in the third loop you need to print numbers.
+4. Now, figure out “What to print?” in a particular (row, column). In the first loop you have
+to print numbers in increasing order upto N-row number+1, then you need to print stars,
+and after than numbers in decreasing order upto 1.
+Pseudo code for the given problem:
+input=N
+numstars=0
+i=1
+While i less than or equal to N:
+ value=1
+ While value less than or equal to N-i+1:
+ Print(value)
+ Increment value by 1
+ stars=1
+ While stars is less than or equal to numstars:
+ Print(“*”)
+ Increment stars by 1
+ value=N-i+1
+ While value is greater than or equal to 1:
+ Print(value)
+ Decrement value by 1
+ Increment i by 1
+Increment numstars by 2.
+❏ Let us dry run the Code for N=4
+● i=1(<=4)
+➔ value=1(<=4-1+1), so print 1.
+➔ value=2(<=4-1+1), so print 2.
+➔ value=3(<=4-1+1), so print 3.
+➔ value=4(<=4-1+1), so print 4.
+➔ value=4(>4-1+1), so move out of this inner loop.
+➔ stars=1(>numstars=0),so print nothing and move out of this inner loop.
+➔ value=4(>=1), so print 4.
+➔ value=3(>=1), so print 3.
+➔ value=2(>=1), so print 2.
+➔ value=1(>=1), so print 1.
+➔ value=0(<1), so move out of this inner loop.
+● i=2(<=4)
+➔ value=1(<=4-2+1), so print 1.
+➔ value=2(<=4-2+1), so print 2.
+➔ value=3(<=4-2+1), so print 3.
+➔ value=4(>4-2+1), so move out of this inner loop.
+➔ stars=1(<=numstars=2), so print “*”
+➔ stars=2(<=numstars=2), so print “*”.
+➔ stars=3(>numstars=2), so move out of this inner loop.
+➔ value=3(>=1), so print 3.
+➔ value=2(>=1), so print 2.
+➔ value=1(>=1), so print 1.
+➔ value=0(<1), so move out of this inner loop.
+● i=3(<=4)
+➔ value=1(<=4-3+1), so print 1.
+➔ value=2(<=4-3+1), so print 2.
+➔ value=3(>4-3+1), so move out of this inner loop.
+➔ stars=1(<=numstars=4), so print “*”
+➔ stars=2(<=numstars=4), so print “*”.
+➔ stars=3(<=numstars=4), so print “*”.
+➔ stars=4(<=numstars=4), so print “*”.
+➔ stars=5(>numstars=4), so move out of this inner loop.
+➔ value=2(>=1), so print 2.
+➔ value=1(>=1), so print 1.
+➔ value=0(<1), so move out of this inner loop.
+● i=4(<=4)
+➔ value=1(<=4-4+1), so print 1.
+➔ value=2(>4-4+1), so move out of this inner loop.
+➔ stars=1(<=numstars=6), so print “*”
+➔ stars=2(<=numstars=6), so print “*”.
+➔ stars=3(<=numstars=6), so print “*”.
+➔ stars=4(<=numstars=6), so print “*”.
+➔ stars=5(<=numstars=6), so print “*”
+➔ stars=6(<=numstars=6), so print “*”
+➔ stars=7(>numstars=7), so move out of this inner loop.
+➔ value=1(>=1), so print 1.
+➔ value=0(<1), so move out of this inner loop.
+● i=5(>4), move out of the loop
+So , final output:
+ 12344321
+ 123**321
+ 12****21
+ 1******1
+
+
+
+
