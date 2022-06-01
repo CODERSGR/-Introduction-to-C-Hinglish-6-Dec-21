@@ -52,3 +52,35 @@ int main() {
              
 	
 }
+
+
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+Find Character Case
+Problem Description: In the given problem, you have to print 1 if the input character is
+uppercase, 0 if it is lowercase, or -1 if it is an invalid character.
+For example: if input character is ‘A’ output should be 1
+if input character is ‘a’ output should be 0
+if input character is ‘*’ output should be -1
+How to approach?
+1. Take the input character form the user.
+2. Check for the conditions if the given character lies between “A” and “Z”, this means we
+have uppercase in the input character then print 1, if it lies between “a” and “z”, we have
+lowercase in the input character then print 0 otherwise print -1.
+Pseudo code for the problem:
+Take the input from the user.
+input=ch
+If ch>=‘A’ and ch<=‘Z’:
+ print(1)
+If ch>= ‘a’ and ch<=‘z’:
+ print(0)
+Else:
+ print(-1)
+❏ Let us dry run the code:
+● If the input is Y, it satisfies the 1st condition: ch>= ‘A’ and ch<= ‘Z’,
+therefore, 1 will be printed.
+● If the input is y, it satisfies the 2nd condition: ch>=’a’ and ch<=’z’,
+therefore, 0 will be printed.
+● If the input is #, we will move to the else and -1 will be printed
