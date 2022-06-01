@@ -1,0 +1,118 @@
+Fibonacci Number
+Send Feedback
+Given a number N, figure out if it is a member of fibonacci series or not. Return true if the number is member of fibonacci series else false.
+Fibonacci Series is defined by the recurrence
+    F(n) = F(n-1) + F(n-2)
+where F(0) = 0 and F(1) = 1
+
+
+Input Format :
+Integer N
+Output Format :
+true or false
+Constraints :
+0 <= n <= 10^4
+Sample Input 1 :
+5
+Sample Output 1 :
+true
+Sample Input 2 :
+14
+Sample Output 2 :
+false    
+
+
+/*************************************************** SOLUTION *************************************************************************/
+
+
+/***************************************************MAIN CODE *************************************************************************/
+
+
+#include<iostream>
+using namespace std;
+#include "Solution.h"
+
+int main(){
+
+  int n; 
+  cin >> n ;
+  if(checkMember(n)){
+    cout << "true" << endl;
+  }else{
+    cout << "false" << endl;
+  }
+
+}
+
+
+/***************************************************YOUR CODE *************************************************************************/
+
+
+bool checkMember(int n){
+  int a=0,b=1,c=0;
+    while(c<n){
+        c=a+b;
+        a=b;
+        b=c;
+            }
+    if(c==n)
+        return true;
+    else
+        return false;
+}
+
+
+
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+
+Fibonacci Member
+Problem Description: You are given with a number N, you have to figure out if it is a member
+of Fibonacci series or not. Return true if the number is member of Fibonacci series else false.
+How to approach?
+We can approach this problem by generating Fibonacci numbers till generated numbers are less
+than N.
+If the generated number is equal to N, then it is a member of Fibonacci series, otherwise not.
+Pseudo Code for this problem:
+Input=N
+Function checkMember:
+a=0
+b=1
+While a less than N:
+ c=a + b
+ a=b
+ b=c
+If a equal to N:
+ Return true
+Else:
+ Return false
+❏ Let us dry run the code for N= 5
+a=0
+b=1
+➔ a < N :
+c=0+1= 1
+a= 1
+b= 1
+➔ a < N :
+c=1+1= 2
+a= 1
+b= 2
+➔ a < N :
+c=1+2= 3
+a= 2
+b= 3
+➔ a < N :
+c=2+3= 5
+a= 3
+b= 5
+➔ a < N :
+c=3+5= 8
+a= 5
+b= 8
+➔ a = N
+Return true
+Final output:
+truE
