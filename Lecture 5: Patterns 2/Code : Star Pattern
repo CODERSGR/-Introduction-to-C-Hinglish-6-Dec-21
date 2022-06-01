@@ -62,3 +62,73 @@ int main()
         cout << endl;
     }
 }
+
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+
+Star Pattern
+Problem Description: You are given with an input number N, then you have to print the given
+star pattern corresponding to that number N.
+For example if N=4
+Pattern output : *
+ ***
+ *****
+ *******
+How to approach?
+1. Take N as input from the user.
+2. Figure out the number of rows, (which is N here) and run a loop for that.
+3. Now, figure out the number of columns in ith row ( i.e. 2*(i)-1)and run a loop for that
+within this. Here, first you need to run a loop to print the spaces too.
+4. Now, figure out “What to print?” in a particular row, column number. Here we have to
+print “*”.
+Pseudo code for the given problem:
+input=N
+i=1
+While i is less than equal to N:
+ spaces=1
+ While spaces is less than (n-i):
+ print(‘ ’)
+ Increment spaces by 1
+ j=1
+ While j is less than equal to 2*i-1:
+ print(“*”)
+ Increment j by 1
+ Increment i by 1
+ Add a new line here
+❏ Let us dry run the Code for N=4
+● i=1(<=4)
+➔ 4-1=3 spaces are getting printed first.
+➔ j=1(<=2*1-1), so print ”*”
+➔ j=2 (>2*1-1), move out of the inner loop with a new line
+● i=2(<=4)
+➔ 4-2=2 spaces are getting printed first.
+➔ j=1 (<=2*2-1), so print “*”
+➔ j=2 (<=2*2-1), so print “*”
+➔ j=3 (<=2*2-1), so print “*”
+➔ j=4(>2*2-1), move out of the inner loop with a new line
+● i=3(<=4)
+➔ 4-3=1 space is getting printed first.
+➔ j=1(<=2*3-1), so print “*”
+➔ j=2(<=2*3-1), so print “*”
+➔ j=3(<=2*3-1), so print “*”
+➔ j=4(<=2*3-1), so print “*”
+➔ j=5(<=2*3-1), so print “*”
+➔ j=6(>2*3-1), move out of the inner loop with a new line
+● i=4(<=4)
+➔ 4-4=0 no space is getting printed.
+➔ j=1(<=2*4-1), so print “*”
+➔ j=2(<=2*4-1), so print “*”
+➔ j=3(<=2*4-1), so print “*”
+➔ j=4(<=2*4-1), so print “*”
+➔ j=5(<=2*4-1), so print “*”
+➔ j=6(<=2*4-1), so print “*”
+➔ j=7(<=2*4-1), so print “*”
+➔ j=8(>2*4-1), move out of the inner loop with a new line
+● i=5(>4), move out of the loop
+So , final output:
+ *
+ ***
+ *****
+ *******
