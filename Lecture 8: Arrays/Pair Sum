@@ -1,0 +1,164 @@
+Pair Sum
+Send Feedback
+You have been given an integer array/list(ARR) and a number X. Find and return the total number of pairs in the array/list which sum to X.
+Note:
+Given array/list can contain duplicate elements. 
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First line of each test case or query contains an integer 'N' representing the size of the first array/list.
+
+Second line contains 'N' single space separated integers representing the elements in the array/list.
+
+Third line contains an integer 'X'.
+Output format :
+For each test case, print the total number of pairs present in the array/list.
+
+Output for every test case will be printed in a separate line.
+Constraints :
+1 <= t <= 10^2
+0 <= N <= 10^3
+0 <= X <= 10^9
+Time Limit: 1 sec
+Sample Input 1:
+1
+9
+1 3 6 2 5 4 3 2 4
+7
+Sample Output 1:
+7
+Sample Input 2:
+2
+9
+1 3 6 2 5 4 3 2 4
+12
+6
+2 8 10 5 -2 5
+10
+Sample Output 2:
+0
+2
+
+
+ Explanation for Input 2:
+Since there doesn't exist any pair with sum equal to 12 for the first query, we print 0.
+
+For the second query, we have 2 pairs in total that sum up to 10. They are, (2, 8) and (5, 5).
+
+
+/*************************************************** SOLUTION *************************************************************************/
+
+
+/***************************************************MAIN CODE *************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+#include "solution.h"
+
+int main()
+{
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		int size;
+		int x;
+
+		cin >> size;
+		int *input = new int[size];
+
+		for (int i = 0; i < size; i++)
+		{
+			cin >> input[i];
+		}
+
+		cin >> x;
+
+		cout << pairSum(input, size, x) << endl;
+
+		delete[] input;
+	}
+	
+	return 0;
+}
+
+/***************************************************YOUR CODE*************************************************************************/
+
+int pairSum(int *input, int size, int x)
+
+{
+     int count=0;
+	for(int i =0;i<size-1;i++) 
+    {
+        
+        // int val = x - input[i];
+        for (int j = i + 1;j<size;j++)
+        {
+            // if(val==input[j])
+                        if (input[i] + input[j] == x)
+            {
+                count++;
+            }
+        }
+    }
+       return count;
+    }
+
+	//Write your code here
+
+
+/***************************************************EDITORIAL SOLUTION *************************************************************************/
+
+Pair Sum 
+Problem Description:​ ​Given a random integer array A and a number x. Find and
+print the pair of elements in the array which sum to x. Array A can contain
+duplicate elements.
+Sample Input:
+ ​9 (Size of array)
+1 3 6 2 5 4 3 2 4 (Elements of array)
+7 (x)
+Sample Output:
+ ​1 6
+3 4
+3 4
+2 5
+2 5
+3 4
+3 4
+How to approach?
+The naive approach to this problem would be to run a double nested loop and check
+every pair for their sum. If it’s equal to ‘x’, we print it else we move to the next iteration.
+The double nested loop will look like this:
+for(i <- 0; i < arr.size() - 1; i <- i + 1):
+for(j <- i + 1; j < arr.size(); j <- j + 1):
+if(arr[i] + arr[j] = x):
+printPair();
+The time complexity of this method is O(n​2
+) because of the double nested loop and the
+space complexity is O(1) since we are not using any extra space.
+We can improve the time complexity to O(n) at the cost of some extra space.
+The idea is that in the naive approach, we are checking every possible pair that can be
+formed but we don’t have to do that.
+If we iterate through the array, and we encounter some element ​arr[i], then all we
+need to do is to check whether we’ve encountered ​ (x - arr[i]) somewhere
+previously in the array and if yes, then how many times. Ideally, we would want to
+access this information in O(1) time. For this, we can use a HashMap.
+So, now we know how many times (​x - arr[i]) has appeared. Then we can print the
+pair ​(x - arr[i], arr[i]) {frequency of ​x - arr[i]} times.
+The time complexity of this approach will be O(n) and so will the space complexity.
+Things to look out for!
+What happens if ‘x’ is even and there’s an element which is equal to x/2 in the array?
+We’ll have to be careful that we don’t consider ​(x/2, x/2) as a valid pair. This
+problem has an easy fix. Just make sure that you insert/update the current element
+after you’ve printed the pairs (if any) for that iteration.
+The pseudo-code for this approach is shown on the next page.
+function pairSum(arr, x):
+HashMap(integer,integer) frequencyMap
+for element in arr:
+complement <- x - element
+if(frequencyMap contains the key ‘complement’):
+//print pair frequencyMap[complement] times
+frequencyMap[element] <- frequencyMap[element] + 1
+//frequencyMap[element] is initially 0
